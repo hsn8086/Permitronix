@@ -1,7 +1,7 @@
 import re
 from typing import Union
 
-import Permitronix
+import permitronix
 from .permission_node import PermissionNode
 from .util.jelly import Jelly
 
@@ -11,11 +11,11 @@ class PermissionTable(Jelly):
     A class that represents a table of permission nodes.
     """
 
-    def __init__(self, ptx: Permitronix, name: str):
+    def __init__(self, ptx: permitronix, name: str):
         """
         Initialize a new PermissionTable object.
 
-        :param ptx: a Permitronix object
+        :param ptx: a permitronix object
         :param name: the name of the permission table
         """
         super().__init__()
@@ -24,11 +24,11 @@ class PermissionTable(Jelly):
         self.bases = set()
         self.nodes = {}
 
-    def set_ptx(self, ptx: Permitronix):
+    def set_ptx(self, ptx: permitronix):
         """
-        Set the Permitronix object.
+        Set the permitronix object.
 
-        :param ptx: a Permitronix object
+        :param ptx: a permitronix object
         """
         self.__ptx = ptx
 

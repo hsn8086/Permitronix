@@ -1,9 +1,9 @@
 from setuptools import setup
 
 setup(
-    name='Permitronix',
+    name='permitronix',
     version='1.0.0',
-    packages=['Permitronix'],
+    packages=['permitronix'],
     url='https://github.com/hsn8086/Permitronix',
     license='MIT',
     author='hsn',

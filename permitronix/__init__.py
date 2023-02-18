@@ -13,7 +13,7 @@ ver = '1.0.1'
 class Permitronix:
     def __init__(self, data_base: Union[RPDB, str] = None):
         """
-        Create a new Permitronix instance
+        Create a new permitronix instance
 
         :param data_base: Either the path to an existing RPDB instance or an instance of RPDB
         """
@@ -87,7 +87,7 @@ class Permitronix:
             """
             Create a new _with_get instance
 
-            :param ptx: The Permitronix instance that this context manager belongs to
+            :param ptx: The permitronix instance that this context manager belongs to
             :param obj: The name of the object that this context manager is for
             """
             self.lock = ptx.lock
