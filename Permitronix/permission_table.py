@@ -1,6 +1,7 @@
 import re
 from typing import Union
 
+import Permitronix
 from .permission_node import PermissionNode
 from .util.jelly import Jelly
 
