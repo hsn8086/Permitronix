@@ -3,7 +3,7 @@ from typing import Union
 
 import permitronix
 from .permission_node import PermissionNode
-from .util.jelly import Jelly
+from .jelly import Jelly
 
 
 class PermissionTable(Jelly):

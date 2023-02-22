@@ -1,6 +1,6 @@
 from typing import Union
 from .permission_level import PermissionLevel
-from .util.jelly import Jelly
+from .jelly import Jelly
 
 
 class PermissionNode(Jelly):
