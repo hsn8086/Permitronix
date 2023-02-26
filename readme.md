@@ -23,7 +23,7 @@ from permitronix.permission_node import PermissionNode
 from permitronix.permission_table import PermissionTable
 
 # Create a permitronix instance
-ptx = Permitronix()
+ptx = Permitronix({})
 
 # Set a permission for an object
 obj = "example"
@@ -48,11 +48,15 @@ The `PermissionTable` class allows you to define permission tables for users and
 create a permission table:
 
 ```python
+from permitronix import Permitronix
 from permitronix.permission_node import PermissionNode
 from permitronix.permission_table import PermissionTable
 
+# Create a permitronix instance
+ptx = Permitronix({})
+
 # Create a permission table
-pt = PermissionTable('data')
+pt = PermissionTable(ptx, 'data')
 pt.set_permission(PermissionNode('regular_expressions_for_some_permissions_.*', 'scope_id:1145'))
 
 

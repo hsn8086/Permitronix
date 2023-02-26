@@ -1,1 +1,1 @@
-RP-DataBase
+setuptools~=65.5.1

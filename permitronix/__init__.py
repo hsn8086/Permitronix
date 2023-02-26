@@ -1,28 +1,23 @@
 from threading import Lock
 from typing import Union
 
-from RPDB.database import RPDB
-
+from .db import format_data_base
 from .permission_level import PermissionLevel
 from .permission_node import PermissionNode
 from .permission_table import PermissionTable
 
-ver = '1.0.3'
+ver = '1.1.3'
 
 
 class Permitronix:
-    def __init__(self, data_base: Union[dict, RPDB, str] = None):
+    def __init__(self, data_base: Union[dict, 'RPDB'] = None):
         """
         Create a new permitronix instance.
 
         :param data_base: Either the path to an existing RPDB instance or an instance of RPDB.
         """
-        if isinstance(data_base, str):
-            self.db = RPDB(data_base)
-        elif isinstance(data_base, RPDB):
-            self.db = data_base
-        else:
-            raise ValueError("data_base must be an RPDB instance or a path to an RPDB database.")
+
+        self.db = format_data_base(data_base)
 
         self.todos = {}
         self.lock = Lock()
@@ -34,9 +29,7 @@ class Permitronix:
         :param obj: The name of the object to set the permission table for.
         :param pt: The PermissionTable object to set.
         """
-        if isinstance(self.db, RPDB):
-            with self.db.enter(obj) as v:
-                v.value = pt
+        self.db.set(obj, pt)
 
     def get_permission_table(self, obj: str) -> PermissionTable:
         """
